@@ -43,7 +43,7 @@ if (error != null) {
 
 export const env = {
   env: envVars.NODE_ENV,
-  port: envVars.APP_PORT,
+  port: envVars.PORT,
   mysql: {
     host: envVars.MYSQL_HOST,
     port: envVars.MYSQL_PORT,

@@ -3,6 +3,8 @@ import { CreateCommentDto } from './dto/create-comment.dto';
 import { Repository } from 'typeorm';
 import { Comment } from './entities/comment.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { textGenCustom } from 'src/utils/genText/google-ai';
+import { CommentResponse } from './dto/response-comment.dto';
 
 @Injectable()
 export class CommentsService {
@@ -14,10 +16,15 @@ export class CommentsService {
   ) {}
 
   async create(createCommentDto: CreateCommentDto) {
-    return await this.repo.save(createCommentDto);
+    const record = await this.repo.save(createCommentDto);
+    const response = await textGenCustom.genvTuberResponse(record.content);
+    return {
+      ...record,
+      response: response,
+    } as CommentResponse;
   }
 
-  async findByPumpFunHash(pumpFunHash: string) {
-    return await this.repo.findBy({ pumpFunHash });
+  async findByGroup(group: string) {
+    return await this.repo.findBy({ group });
   }
 }

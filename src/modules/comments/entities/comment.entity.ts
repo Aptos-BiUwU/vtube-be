@@ -1,9 +1,10 @@
 import { CommentStatus } from 'src/constants/comment.info';
 import { BaseEntity } from 'src/utils/entity/base-entity';
-import { Column } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
 export const COMMENT = 'comment';
 
+@Entity()
 export class Comment extends BaseEntity {
   @Column({ type: 'enum', enum: CommentStatus, default: CommentStatus.live })
   status: CommentStatus;
@@ -11,12 +12,18 @@ export class Comment extends BaseEntity {
   @Column({ nullable: false })
   owner: string;
 
-  @Column({ nullable: true })
-  mention: number;
-
-  @Column({ nullable: true })
-  content: string;
-
   @Column({ nullable: false })
-  pumpFunHash: string;
+  group: string;
+
+  @Column({ nullable: true })
+  mention?: string;
+
+  @Column({ nullable: true })
+  reply?: number;
+
+  @Column({ nullable: true })
+  content?: string;
+
+  @Column({ nullable: true })
+  image?: string;
 }

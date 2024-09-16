@@ -2,10 +2,10 @@ import { ValidationPipe, Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import compression from 'compression';
-import cookieParser from 'cookie-parser';
+import * as compression from 'compression';
+import * as cookieParser from 'cookie-parser';
 import helmet from 'helmet';
-import morgan from 'morgan';
+import * as morgan from 'morgan';
 import { env } from './config';
 import { AppModule } from './modules/app.module';
 

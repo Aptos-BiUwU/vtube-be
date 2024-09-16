@@ -5,20 +5,30 @@ export class CreateCommentDto {
   @ApiProperty({ type: String })
   @IsNotEmpty()
   @IsString()
-  walletAddress: string;
+  owner: string;
 
   @ApiProperty({ type: String })
   @IsNotEmpty()
   @IsString()
-  content: string;
+  group: string;
 
   @ApiProperty({ type: String })
   @IsOptional()
+  @IsString()
+  mention?: string;
+
+  @ApiProperty({ type: Number })
+  @IsNotEmpty()
   @IsNumber()
-  mention?: number;
+  reply?: number;
 
   @ApiProperty({ type: String })
   @IsNotEmpty()
   @IsString()
-  pumpFunHash: string;
+  content?: string;
+
+  @ApiProperty({ type: String })
+  @IsNotEmpty()
+  @IsString()
+  image?: string;
 }

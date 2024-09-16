@@ -19,13 +19,13 @@ export class CommentsController {
     return await this.commentsService.create(createCommentDto);
   }
 
-  @Get(':hash')
+  @Get('/:group')
   @ApiResponse({
-    status: 200,
+    status: 201,
     type: [CommentResponse],
-    description: 'Get All Comment Of PumFun',
+    description: 'Get All Comment Of Group',
   })
-  async findOne(@Param('hash') hash: string) {
-    return await this.commentsService.findByPumpFunHash(hash);
+  async findAllOfGroup(@Param('group') group: string) {
+    return await this.commentsService.findByGroup(group);
   }
 }

@@ -17,12 +17,21 @@ export class CommentResponse {
   @ApiResponseProperty({ type: String })
   owner: string;
 
+  @ApiResponseProperty({ type: String })
+  group: string;
+
+  @ApiResponseProperty({ type: String })
+  mention?: string;
+
   @ApiResponseProperty({ type: Number })
-  mention: number;
+  reply?: number;
 
   @ApiResponseProperty({ type: String })
-  content: string;
+  content?: string;
 
   @ApiResponseProperty({ type: String })
-  pumpFunHash: string;
+  image?: string;
+
+  @ApiResponseProperty({ type: String })
+  response: string;
 }
