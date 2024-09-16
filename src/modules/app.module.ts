@@ -6,8 +6,9 @@ import { RedisModule } from '@nestjs-modules/ioredis';
 
 import { env } from 'src/config';
 import { CommentsModule } from './comments/comments.module';
-import { AiGensModule } from './ai-gens/ai-gens.module';
+import { UsersModule } from './users/users.module';
 import dataSource from 'src/libs/typeORM.config';
+import { FileUploadModule } from './file-upload/file-upload.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import dataSource from 'src/libs/typeORM.config';
       },
     }),
     CommentsModule,
-    AiGensModule,
+    UsersModule,
+    FileUploadModule,
   ],
 })
 export class AppModule {}
