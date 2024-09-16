@@ -30,6 +30,7 @@ const envVarsSchema = Joi.object()
 
     API_KEY: Joi.string().required(),
     TECH_TO_SPEECH_KEY: Joi.string().required(),
+    TEXT_TO_SPEECH_URL: Joi.string().required(),
   })
   .unknown();
 
@@ -65,8 +66,9 @@ export const env = {
     port: envVars.MINIO_PORT,
     secretKey: envVars.MINIO_SECRET_KEY,
   },
-  key: {
+  gen: {
     aiAPIKey: envVars.API_KEY,
     voiceAPIKey: envVars.TECH_TO_SPEECH_KEY,
+    voiceUrl: envVars.TEXT_TO_SPEECH_URL,
   },
 };

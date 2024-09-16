@@ -33,5 +33,5 @@ export class CommentResponse {
   image?: string;
 
   @ApiResponseProperty({ type: String })
-  response: string;
+  urlResponse: string;
 }

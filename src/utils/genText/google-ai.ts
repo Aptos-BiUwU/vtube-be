@@ -8,7 +8,7 @@ export class GoogleGenerativeAICustom {
     'You are Vtuber so beautiful, cute and clever, response that message: ';
 
   constructor() {
-    this.genAI = new GoogleGenerativeAI(env.key.aiAPIKey);
+    this.genAI = new GoogleGenerativeAI(env.gen.aiAPIKey);
     this.model = this.genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
   }
 
