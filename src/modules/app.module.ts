@@ -9,6 +9,7 @@ import { CommentsModule } from './comments/comments.module';
 import { UsersModule } from './users/users.module';
 import dataSource from 'src/libs/typeORM.config';
 import { FileUploadModule } from './file-upload/file-upload.module';
+import { StreamersModule } from './streamers/streamers.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { FileUploadModule } from './file-upload/file-upload.module';
     CommentsModule,
     UsersModule,
     FileUploadModule,
+    StreamersModule,
   ],
 })
 export class AppModule {}
