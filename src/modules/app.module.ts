@@ -10,6 +10,7 @@ import { UsersModule } from './users/users.module';
 import dataSource from 'src/libs/typeORM.config';
 import { FileUploadModule } from './file-upload/file-upload.module';
 import { StreamersModule } from './streamers/streamers.module';
+import { StreamRecordsModule } from './stream-records/stream-records.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { StreamersModule } from './streamers/streamers.module';
     UsersModule,
     FileUploadModule,
     StreamersModule,
+    StreamRecordsModule,
   ],
 })
 export class AppModule {}
